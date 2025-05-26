@@ -246,16 +246,16 @@ export function Dashboard() {
     const value = e.target.value
     setPrompt(value)
 
-    // Show warning if prompt exceeds 1000 characters
-    if (value.length > 10000) {
+    // Show warning if prompt exceeds 20000 characters
+    if (value.length > 20000) {
       toast({
         title: "Prompt too long",
-        description: "Your prompt has been truncated to 10000 characters.",
+        description: "Your prompt has been truncated to 20000 characters.",
         // variant: "warning", // Removed as "warning" is not a valid variant
       })
-      setPrompt(value.substring(0, 10000))
+      setPrompt(value.substring(0, 20000))
       if (textareaRef.current) {
-        textareaRef.current.value = value.substring(0, 10000)
+        textareaRef.current.value = value.substring(0, 20000)
       }
     }
   }
